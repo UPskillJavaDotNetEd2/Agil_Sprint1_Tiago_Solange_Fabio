@@ -206,5 +206,5 @@ public abstract class Cliente extends Pessoa {
      * @param obj Objeto a ser comparado com o Cliente.
      * @return true se os objetos forem iguais, false caso contrário.
      */
-    
+
 }
