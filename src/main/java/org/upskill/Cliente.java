@@ -207,4 +207,25 @@ public abstract class Cliente extends Pessoa {
      * @return true se os objetos forem iguais, false caso contrário.
      */
 
+    @Override
+    public boolean equals(Object obj) {
+        // Lógica de comparação de igualdade entre Clientes
+        if (obj == null)
+            return false;
+
+        if (obj == this)
+            return true;
+
+        // remover a repetição de condições nas super classes
+        if (super.equals(obj) == false)
+            return false;
+
+        if (obj instanceof Cliente == false)
+            return false;
+
+        Cliente cliente = (Cliente) obj;
+        return Double.compare(altura, cliente.altura) == 0
+                && Double.compare(peso, cliente.peso) == 0
+                && numeroDeAulasHidro == cliente.numeroDeAulasHidro;
+    }
 }
