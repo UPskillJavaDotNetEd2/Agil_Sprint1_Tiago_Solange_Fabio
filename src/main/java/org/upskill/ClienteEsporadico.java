@@ -221,19 +221,5 @@ public class ClienteEsporadico extends Cliente {
      * @param obj O objeto a ser comparado.
      * @return true se os clientes esporádicos são iguais, false caso contrário.
      */
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
 
-        if (obj == null || getClass() != obj.getClass())
-            return false;
-
-        if (!super.equals(obj))
-            return false;
-
-        ClienteEsporadico outroCliente = (ClienteEsporadico) obj;
-        return Double.compare(numeroDeHoras, outroCliente.numeroDeHoras) == 0
-                && numeroDeAulas == outroCliente.numeroDeAulas;
-    }
 }
