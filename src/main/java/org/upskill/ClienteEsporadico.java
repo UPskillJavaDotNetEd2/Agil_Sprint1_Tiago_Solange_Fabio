@@ -197,7 +197,23 @@ public class ClienteEsporadico extends Cliente {
         return numeroDeAulasHidro + numeroDeAulas;
     }
 
+    /**
+     * Converte os detalhes do cliente esporádico em uma representação de string.
+     *
+     * @return Uma string que representa os detalhes do cliente esporádico.
+     */
+    @Override
+    public String toString() {
 
+        String superToString = super.toString();
+
+        superToString = superToString.replace("Cliente", "Cliente Esporadico");
+
+        superToString = superToString.substring(0, superToString.length() - 2);
+
+        return String.format("%s,\n\tNumero De Horas: %.2f,\n\tNumero De Aulas: %d\n}",
+                 superToString, numeroDeHoras, numeroDeAulas);
+    }
 
     /**
      * Verifica se dois clientes esporádicos são iguais.
