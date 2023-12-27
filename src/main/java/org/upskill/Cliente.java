@@ -185,6 +185,20 @@ public abstract class Cliente extends Pessoa {
      *
      * @return Uma representação em formato de string do objeto Cliente.
      */
+    @Override
+    public String toString() {
+        // 1- ir buscar a toString() da super classe => "Pessoa: { Nome: ...etc... }";
+        String superToString = super.toString();
+
+        // 2- trocar "Pessoa" por "Cliente"
+        superToString = superToString.replace("Pessoa", "Cliente");
+
+        // 3- remover ultima chaveta => "Cliente: { Nome: ...etc... "
+        superToString = superToString.substring(0, superToString.length() - 2);
+
+        // 4- adicionar variáveis que faltam:
+        return String.format("%s,\n\tAltura: %.2fm,\n\tPeso: %.2fkg\n}", superToString, altura, peso);
+    }
 
     /**
      * Sobrescrita do método equals para comparar a igualdade de Clientes.
