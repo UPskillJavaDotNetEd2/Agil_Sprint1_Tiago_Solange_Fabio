@@ -324,7 +324,9 @@ public class Main {
      *
      * @return Uma instância de Data com valores aleatórios.
      */
-    
+    public static Data getRandomData() {
+        return new Data(random.nextInt(1980, 2001), random.nextInt(13), random.nextInt(31));
+    }
 
 
 }
