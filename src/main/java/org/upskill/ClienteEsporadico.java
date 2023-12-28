@@ -41,12 +41,20 @@ public class ClienteEsporadico extends Cliente {
     private static double precoPorHora      = 5;
 
     /**
-     * 
+     * Representa o preço por hora para clientes que incluem aulas de hidroginástica.
      */
     private static double precoPorHoraHidro = 7;
+    /**
+     * Representa a duração padrão de uma aula em horas.
+     */
     private static double tempoDeAula       = 1;
-
+    /**
+     * Contador para clientes esporádicos, utilizado para rastrear o número de clientes desse tipo.
+     */
     private static int contadorClientesEsporadico = 0;
+    /**
+     * Sufixo padrão para identificar o tipo de cliente como esporádico.
+     */
     private final static TipoDeCliente SUFIXO = TipoDeCliente.ESPORADICO;
 
     /**
