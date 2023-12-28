@@ -5,23 +5,7 @@ package org.upskill;
  */
 public class ClienteEsporadico extends Cliente {
 
-    /**
-     * Número de horas que o cliente permanecu no ginaáio.
-     */
-    private double numeroDeHoras;
-
-    /**
-     * Numero de Aulas frequentadas pelo cliente.
-     */
-    private int numeroDeAulas;
-
-    // Variaveis de Omissao
-    private final int DEFAULT_NUMERO_HORAS = -1;
-
-    /**
-     * Valor por omissão para numeros de aulas não especificado.
-     */
-    private final int DEFAULT_NUMERO_AULAS = -1;
+    
 
     // Declaração de variáveis estáticas padrão
 
