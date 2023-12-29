@@ -299,15 +299,7 @@ public class Main {
      *
      * @return Uma instância de Funcionário aleatório.
      */
-    public static Funcionario getRandomFuncionario() {
-        return new Funcionario(
-                Utils.getRandomNomeCompleto(),                      // nome
-                getRandomGenero(),                                  // genero
-                Utils.getRandomMorada(),                            // morada
-                getRandomData(),                                    // data
-                random.nextInt(20)                            // clientes angariados
-        );
-    }
+   
 
     /**
      * Gera um valor aleatório do enum Genero.
