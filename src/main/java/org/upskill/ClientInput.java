@@ -28,7 +28,7 @@ public class ClientInput {
 
             return name;
         } catch (Exception e) {
-            return "NO NAME";
+            return "NO NAME"; 
         }
     }
 }
