@@ -95,70 +95,137 @@ public class ClienteEsporadico extends Cliente {
         return numeroDeHoras;
     }
 
-    // Setters Instância
+    // Setters de Instância
+
+    /**
+     * Define o número de horas para a aula.
+     * @param numeroDeHoras O número de horas da aula.
+     */
     public void setNumeroDeHoras(int numeroDeHoras) {
         this.numeroDeHoras = numeroDeHoras;
     }
 
 
-    // Getters Classe
+// Getters de Classe
+
+    /**
+     * Obtém o preço por aula para clientes esporádicos.
+     * @return O preço por aula.
+     */
     public static double getPrecoPorAula() {
         return precoPorAula;
     }
 
+    /**
+     * Obtém o preço por hora padrão para clientes esporádicos.
+     * @return O preço por hora padrão.
+     */
     public static double getPrecoPorHora() {
         return precoPorHora;
     }
 
+    /**
+     * Obtém o preço por hora para aulas de hidroginástica para clientes esporádicos.
+     * @return O preço por hora para aulas de hidroginástica.
+     */
     public static double getPrecoPorHoraHidro() {
         return precoPorHoraHidro;
     }
 
+    /**
+     * Obtém o contador de clientes esporádicos.
+     * @return O contador de clientes esporádicos.
+     */
     public static int getContadorClientesEsporadico() {
         return contadorClientesEsporadico;
     }
 
+    /**
+     * Define o número de horas para a aula.
+     * @param numeroDeHoras O número de horas da aula.
+     */
     public void setNumeroDeHoras(double numeroDeHoras) {
         this.numeroDeHoras = numeroDeHoras;
     }
 
+    /**
+     * Define o número de aulas para o cliente esporádico.
+     * @param numeroDeAulas O número de aulas.
+     */
     public void setNumeroDeAulas(int numeroDeAulas) {
         this.numeroDeAulas = numeroDeAulas;
     }
 
+    /**
+     * Obtém o preço por hora extra para clientes esporádicos.
+     * @return O preço por hora extra.
+     */
     public static double getPrecoPorHoraExtra() {
         return precoPorHoraExtra;
     }
 
+    /**
+     * Define o preço por hora extra para clientes esporádicos.
+     * @param precoPorHoraExtra O preço por hora extra.
+     */
     public static void setPrecoPorHoraExtra(double precoPorHoraExtra) {
         ClienteEsporadico.precoPorHoraExtra = precoPorHoraExtra;
     }
 
+    /**
+     * Obtém o tempo padrão de uma aula para clientes esporádicos.
+     * @return O tempo padrão de uma aula.
+     */
     public static double getTempoDeAula() {
         return tempoDeAula;
     }
 
+    /**
+     * Define o tempo padrão de uma aula para clientes esporádicos.
+     * @param tempoDeAula O tempo padrão de uma aula.
+     */
     public static void setTempoDeAula(double tempoDeAula) {
         ClienteEsporadico.tempoDeAula = tempoDeAula;
     }
 
-    // Setters Classe
+// Setters de Classe
+
+    /**
+     * Define o preço por aula para clientes esporádicos.
+     * @param precoPorAula O preço por aula.
+     */
     public static void setPrecoPorAula(double precoPorAula) {
         ClienteEsporadico.precoPorAula = precoPorAula;
     }
 
+    /**
+     * Define o preço por hora padrão para clientes esporádicos.
+     * @param precoPorHora O preço por hora padrão.
+     */
     public static void setPrecoPorHora(double precoPorHora) {
         ClienteEsporadico.precoPorHora = precoPorHora;
     }
 
+    /**
+     * Define o preço por hora para aulas de hidroginástica para clientes esporádicos.
+     * @param precoPorHoraHidro O preço por hora para aulas de hidroginástica.
+     */
     public static void setPrecoPorHoraHidro(double precoPorHoraHidro) {
         ClienteEsporadico.precoPorHoraHidro = precoPorHoraHidro;
     }
 
+    /**
+     * Obtém o total de aulas, somando a quantidade de aulas normais e de hidroginástica.
+     * @return O total de aulas.
+     */
     public int getTotalDeAulas() {
         return numeroDeAulas + numeroDeAulasHidro;
     }
 
+    /**
+     * Sobrescreve o método para gerar o ID do cliente esporádico.
+     * @return O ID gerado.
+     */
     @Override
     String gerarId() {
         // CLI-
