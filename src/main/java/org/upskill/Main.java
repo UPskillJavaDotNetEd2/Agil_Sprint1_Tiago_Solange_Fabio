@@ -314,10 +314,7 @@ public class Main {
      *
      * @return Um valor aleatório do enum Genero.
      */
-    public static Genero getRandomGenero() {
-        Genero[] generos = Genero.values();
-        return generos[random.nextInt(generos.length)];
-    }
+    
 
     /**
      * Gera uma instância de Data com valores de ano, mês e dia aleatórios dentro de um intervalo específico.
