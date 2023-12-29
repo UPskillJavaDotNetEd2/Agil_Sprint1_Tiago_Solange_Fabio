@@ -25,10 +25,10 @@ public class ClientInput {
             do {
                 name = input.nextLine();
             } while (name.length() <= 0);
-
+ 
             return name;
         } catch (Exception e) {
-            return "NO NAME"; 
+            return "NO NAME";
         }
     }
 }
