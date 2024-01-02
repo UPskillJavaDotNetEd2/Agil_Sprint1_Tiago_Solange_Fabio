@@ -51,14 +51,7 @@ public class Main {
      *
      * @return Uma instância da classe Ginasio.
      */
-    public static Ginasio gerarGinasio() {
-        Ginasio ginasio = new Ginasio("UpGym", "Amarante");
-        int quantidadeDePessoas = random.nextInt(9, 20);
-        for (int i = 0; i < quantidadeDePessoas; i++) {
-            ginasio.addPessoa(getRandomPessoa());
-        }
-        return ginasio;
-    }
+    
 
     /**
      * Calcula e apresenta a listagem de Treinadores com nome, idade, número de sessões como Personal Trainer
