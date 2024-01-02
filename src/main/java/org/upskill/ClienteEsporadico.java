@@ -52,7 +52,11 @@ public class ClienteEsporadico extends Cliente {
      * Contador para clientes esporádicos, utilizado para rastrear o número de clientes desse tipo.
      */
     private static int contadorClientesEsporadico = 0;
-  
+    /**
+     * Sufixo padrão para identificar o tipo de cliente como esporádico.
+     */
+    private final static TipoDeCliente SUFIXO = TipoDeCliente.ESPORADICO;
+
     /**
      * Construtor para criar um Cliente Esporádico com detalhes específicos.
      *
