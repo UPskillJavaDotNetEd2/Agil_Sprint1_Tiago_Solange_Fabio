@@ -10,6 +10,8 @@ public class ClientCreator {
 
     private Scanner input;
 
+    private final char charDeCirarCliente = '-';
+
     public Cliente generateCliente() {
         // 1) sout: choose cliente
         input = new Scanner(System.in);
@@ -18,7 +20,7 @@ public class ClientCreator {
 
         // 2) run cliente input method
         Utils.printTitle("Escolher cliente para inserir");
-        while (true) {
+        while (validCliente == false) {
             Utils.printTitle("0-Cliente Regular, 1-Cliente Convidado, 2-Cliente Esporadico", '\'');
             int clientType = getInputInt();
 
@@ -26,22 +28,26 @@ public class ClientCreator {
                 case 0:
                     cliente = getClienteRegular();
                     validCliente = true;
+                    break;
                 case 1:
                     cliente = getClienteConvidao();
                     validCliente = true;
+                    break;
                 case 2:
                     cliente = getClienteEsporadico();
                     validCliente = true;
+                    break;
 
                 default:
                     validCliente = false;
                     System.out.println("Valor inválido: 0-Cliente Regular, 1-Cliente Convidado, 2-Cliente Esporadico");
+                    break;
             }
-
-            if (validCliente)
-                break;
         }
 
+        Utils.printTitle("Cliente Gerado:", true, false);
+        System.out.println(cliente.toString());
+        System.out.println();
         return cliente;
     }
 
@@ -52,6 +58,7 @@ public class ClientCreator {
             try {
                 //System.out.print("Enter a float value: ");
                 inFloat = input.nextFloat();
+                input.nextLine();
                 break;
             } catch (InputMismatchException e) {
                 System.out.println("Valor real inválido...");
@@ -69,6 +76,7 @@ public class ClientCreator {
             try {
                 //System.out.print("Enter a float value: ");
                 inDouble = input.nextDouble();
+                input.nextLine();
                 break;
             } catch (InputMismatchException e) {
                 System.out.println("Valor real inválido...");
@@ -86,6 +94,7 @@ public class ClientCreator {
             try {
                 //System.out.print("Enter an integer value: ");
                 inInt = input.nextInt();
+                input.nextLine();
                 break;
             } catch (InputMismatchException e) {
                 System.out.println("Valor inteiro inválido...");
@@ -141,7 +150,7 @@ public class ClientCreator {
     }
 
     private Genero getInputGenero() {
-        Utils.printTitle("Escolher género:\n\t0-Masculino, 1-Feminino, 2-Outro", ':');
+        Utils.printTitle("Escolher género: 0-Masculino, 1-Feminino, 2-Outro", ':');
         int choice = getInputInt();
 
         switch (choice) {
@@ -191,6 +200,8 @@ public class ClientCreator {
     // public ClienteRegular(String nome, Genero genero, String morada, Data dataNascimento, double altura, double peso, int aulaHidro, double mensalidade, boolean isAtivo, int numeroDeSessoesPT, double precoDePT) {
     // =============================================================================
     public ClienteRegular getClienteRegular() {
+        Utils.printTitle("Criar Cliente Regular", '-');
+
         String nome = getInputName();
         Genero genero = getInputGenero();
         String morada = getInputMorada();
@@ -219,12 +230,12 @@ public class ClientCreator {
     }
 
     private int getInputSessoesPT() {
-        Utils.printTitle("Inserir Número de Aulas Personal Trainer", ':');
+        Utils.printTitle("Inserir Número de Aulas com Personal Trainer", ':');
         return getInputInt();
     }
 
     private double getInputPrecoPT() {
-        Utils.printTitle("Inserir Número de Aulas Personal Trainer", ':');
+        Utils.printTitle("Inserir Preço de Sessões com Personal Trainer", ':');
         return getInputInt();
     }
 
@@ -233,6 +244,8 @@ public class ClientCreator {
     // public ClienteEsporadico(String nome, Genero genero, String morada, Data dataNascimento, double altura, double peso, int aulaHidro, double numeroDeHoras, int numeroDeAulas) {
     // =============================================================================
     public ClienteEsporadico getClienteEsporadico() {
+        Utils.printTitle("Criar Cliente Esporádico", charDeCirarCliente);
+
         String nome = getInputName();
         Genero genero = getInputGenero();
         String morada = getInputMorada();
@@ -264,6 +277,8 @@ public class ClientCreator {
     // public ClienteConvidado(String nome, Genero genero, String morada, Data dataNascimento, double altura, double peso, int aulaHidro, double numeroDeHorasGratuitas, int numeroDeAulas, int numeroDeSessoesPT, double precoDePT) {
     // =============================================================================
     public ClienteConvidado getClienteConvidao() {
+        Utils.printTitle("Criar Cliente Convidado", charDeCirarCliente);
+
         String nome = getInputName();
         Genero genero = getInputGenero();
         String morada = getInputMorada();

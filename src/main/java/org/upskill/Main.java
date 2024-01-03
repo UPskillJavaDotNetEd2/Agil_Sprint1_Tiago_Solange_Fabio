@@ -18,6 +18,8 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        //Cliente cliente = new ClientCreator().generateCliente();
+
         ArrayList clientes = getClientes();
 
         // criação de uma instância da classe Ginásio;
