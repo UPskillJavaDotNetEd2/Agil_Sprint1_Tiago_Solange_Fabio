@@ -1,7 +1,9 @@
 package org.upskill;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * Classe principal que contém o método `main` para execução do programa.
@@ -15,6 +17,8 @@ public class Main {
      * @param args Os argumentos de linha de comando (não utilizados neste programa).
      */
     public static void main(String[] args) {
+
+        ArrayList clientes = getClientes();
 
         // criação de uma instância da classe Ginásio;
         Ginasio ginasio = gerarGinasio();
@@ -44,6 +48,37 @@ public class Main {
 
         // calcular e apresentar, para cada género, a média do seu IMC;
         calcularMediaDeIMCPorGenero(clientesDoGinasio);
+    }
+
+    private static int getInputInt() {
+        Scanner input = new Scanner(System.in);
+        int inInt = 0;
+
+        while (true) {
+            try {
+                inInt = input.nextInt();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Valor inteiro inválido...");
+                input.nextLine();
+            }
+        }
+
+        return inInt;
+    }
+
+    private static ArrayList<Cliente> getClientes() {
+        Utils.printTitle("Inserir numero de Clientes a inserir", ':');
+        int count = getInputInt();
+
+        ArrayList clientes = new ArrayList();
+        ClientCreator clientCreator = new ClientCreator();
+
+        for (int i = 0; i < count; i++) {
+            clientes.add(clientCreator.generateCliente());
+        }
+
+        return clientes;
     }
 
     /**
@@ -299,13 +334,25 @@ public class Main {
      *
      * @return Uma instância de Funcionário aleatório.
      */
-   
+    public static Funcionario getRandomFuncionario() {
+        return new Funcionario(
+                Utils.getRandomNomeCompleto(),                      // nome
+                getRandomGenero(),                                  // genero
+                Utils.getRandomMorada(),                            // morada
+                getRandomData(),                                    // data
+                random.nextInt(20)                            // clientes angariados
+        );
+    }
 
     /**
      * Gera um valor aleatório do enum Genero.
      *
      * @return Um valor aleatório do enum Genero.
      */
+    public static Genero getRandomGenero() {
+        Genero[] generos = Genero.values();
+        return generos[random.nextInt(generos.length)];
+    }
     
 
     /**
@@ -316,6 +363,4 @@ public class Main {
     public static Data getRandomData() {
         return new Data(random.nextInt(1980, 2001), random.nextInt(13), random.nextInt(31));
     }
-
-
 }
